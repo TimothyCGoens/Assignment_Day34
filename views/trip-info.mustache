@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+      {{> menu}}
+
+<ul>
+  {{#trips}}
+  <li>
+    {{destination}}
+    {{departureDate}}
+    {{returnDate}}
+    <img height="150px" width='150px' src='{{destinationImgURL}}'/>
+    <form action='/delete-trip' method='post'>
+    <input type='hidden' name='tripID' value='{{id}}'/>
+    <button type='submit'>Delete</button>
+    </form>
+  </li>
+  {{/trips}}
+</ul>
+
+{{^trips}}
+<p>No trips currently scheduled</p>
+{{/trips}}
+
+
+
+
+
+  </body>
+</html>
